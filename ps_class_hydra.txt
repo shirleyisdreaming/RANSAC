@@ -1,0 +1,44 @@
+### Detector Info ###
+NxPixel 2048
+NyPixel 2048
+px 200
+HeaderBytes 8192
+
+### Ransac Parameter ###
+### Ransac will first identify the center, then identify the rings ###
+fStem /home/beams12/S1IDUSER/mnt/orthros/raghavan_feb23_data/raghavan_feb23/ge3/stock_CeO2_3s
+darkfn /home/beams12/S1IDUSER/mnt/orthros/raghavan_feb23_data/raghavan_feb23/ge3/dark_before_021303.edf.ge3
+startNr 20011
+nFrames 5
+nFrames_intg 5
+nFrames_dark 10
+frame_for_Ransac 1
+ext .edf.ge3
+pad 6
+OutFolder OutFolder_hydra
+
+### Parameters for identifying the center ###
+raw_filter 3                        # threshold value for removing background
+Ransac_SamplingNr 10000              # how many times to try sampling
+Ransac_ring_dis_threshold 2         # the minimum distance between rings
+Ransac_inline_threshold 1000        # minimum points in a ring for identifying the center
+
+### Parameters for identifying the rings ###
+filter_ring_points_threshold 50     # minimum points in a ring for identifying the ring
+ring_distance_threshold 1           # the minimum distance between rings
+ring_width 4                       # the width of the ring will be used for integration
+OutFolder_ring ring_df
+
+### Integrator Parameter ###
+paramFNforIntg ps_integration_LSHR.txt
+doIntegration 0
+endNr 44
+Integration_Folder Integration_LSHR/Integration
+RMin 580
+RMax 1020
+Rwidth 10
+RBinSize 1
+EtaMin -180
+EtaMax 180
+etaWidth 180
+EtaBinSize 1
