@@ -1,0 +1,44 @@
+### Detector Info ###
+NxPixel 1679
+NyPixel 1475
+px 172
+HeaderBytes 8192
+
+### Ransac Parameter ###
+### Ransac will first identify the center, then identify the rings ###
+fStem /home/beams12/S1IDUSER/mnt/orthros/mpe_nov22_data/mpe_nov22/pilatus/dm_dt_pf_U3O8_600A
+darkfn /home/beams12/S1IDUSER/mnt/orthros/mpe_nov22_data/mpe_nov22/pilatus/dark_before_000041.raw
+startNr 70
+nFrames 1441
+nFrames_intg 1441
+nFrames_dark 10
+frame_for_Ransac 1
+ext .raw
+pad 6
+OutFolder OutFolder_U3O8
+
+### Parameters for identifying the center ###
+raw_filter 3                        # threshold value for removing background
+Ransac_SamplingNr 10000              # how many times to try sampling
+Ransac_ring_dis_threshold 2         # the minimum distance between rings
+Ransac_inline_threshold 1000        # minimum points in a ring for identifying the center
+
+### Parameters for identifying the rings ###
+filter_ring_points_threshold 50     # minimum points in a ring for identifying the ring
+ring_distance_threshold 1           # the minimum distance between rings
+ring_width 4                       # the width of the ring will be used for integration
+OutFolder_ring ring
+
+### Integrator Parameter ###
+paramFNforIntg ps_dt.txt
+doIntegration 0
+endNr 71
+Integration_Folder Integration_U3O8/Integration
+RMin 120
+RMax 470
+Rwidth 10
+RBinSize 1
+EtaMin -180
+EtaMax 180
+etaWidth 180
+EtaBinSize 1
