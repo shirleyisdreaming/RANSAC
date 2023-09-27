@@ -6,3 +6,5 @@ you will get the ps_class_U3O8.txt.upd, it will show the radius and beam center 
 .png file is the example which shows the found rings
 
 .jpg file is the example which shows the extract ring which can be used for AI
+
+there are some output examples under /home/beams12/S1IDUSER/xiaoxu/class
